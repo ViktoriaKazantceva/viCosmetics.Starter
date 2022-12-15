@@ -1,0 +1,34 @@
+::after,
+::before,
+:root {
+  // Colors
+  --dark-color: #1a1a1a;
+  --light-color: #fff;
+  --hover-color: #f9d2d2;
+  --grey-color: #666;
+  --grey-light-color: #efe7e7;
+  --error-color: #ba2525;
+  --pink-light: #ea5699;
+  --sale-color: #fef5f5;
+
+  // Fonts
+  --font-family: "Nunito", sans-serif;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 600;
+
+  // Animation time
+  --animation-time-150: 150ms;
+  --animation-time-200: 200ms;
+  --animation-time-250: 250ms;
+  --animation-time-300: 300ms;
+  --animation-time-350: 350ms;
+  --animation-time-400: 400ms;
+  --animation-time-450: 450ms;
+  --animation-time-600: 600ms;
+  --animation-time-650: 650ms;
+
+  // Height (These variables are calculated during page load)
+  // --header-height: 76px;
+  // --mobile-menu-height: 57px;
+}

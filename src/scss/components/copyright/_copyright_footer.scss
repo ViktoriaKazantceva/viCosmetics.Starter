@@ -1,0 +1,18 @@
+.copyright_footer {
+  @include loading-bottom;
+
+  grid-row: 3 / 4;
+
+  @include small-tablet {
+    grid-column: 1 / 9;
+    grid-row: 2 / 3;
+  }
+
+  @include tablet {
+    grid-column: 1 / 13;
+  }
+
+  @include small-desktop {
+    @include loading-top;
+  }
+}

@@ -1,0 +1,134 @@
+.field {
+  --input-border-color: var(--grey-color);
+  --input-text-color: var(--dark-color);
+  --input-placeholder-color: var(--grey-color);
+  --input-background: transparent;
+  --icon-color: var(--grey-color);
+
+  color: var(--dark-color);
+
+  &__label {
+    @include font-size-16;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(rem(180), 1fr) rem(40);
+    grid-template-rows: rem(40);
+    margin-bottom: rem(8);
+    padding-right: rem(8);
+  }
+
+  &__input {
+    @include font-size-16;
+
+    position: relative;
+    z-index: 2;
+    grid-column: 1 / 2;
+    margin: 0;
+    border: none;
+    padding: 0 rem(8) 0 rem(16);
+    color: var(--input-text-color);
+    background-color: transparent;
+
+    &::placeholder {
+      text-transform: lowercase;
+      color: var(--input-placeholder-color);
+      opacity: 1;
+    }
+
+    &:focus {
+      --input-text-color: var(--dark-color);
+
+      outline: none;
+      border: none;
+
+      + .field__input-border-bottom {
+        background-color: currentColor;
+
+        &::before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &__input-border-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--input-border-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: calc(100% - 1px);
+      z-index: 1;
+      width: 100%;
+      height: rem(40);
+      background-color: var(--input-background);
+    }
+  }
+
+  &__text-error {
+    @include font-size-12;
+
+    display: none;
+    color: var(--input-text-color);
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 2;
+    grid-column: 2 / 3;
+    stroke: var(--icon-color);
+    transition: stroke var(--animation-time-200) linear;
+  }
+
+  &_subscription {
+    --input-border-color: var(--light-color);
+    --input-text-color: var(--light-color);
+    --input-placeholder-color: var(--light-color);
+    --icon-color: var(--light-color);
+
+    color: var(--light-color);
+
+    .field__input {
+      &:focus {
+        --input-text-color: var(--light-color);
+
+        + span + .field__btn {
+          --icon-color: var(--light-color);
+        }
+      }
+    }
+  }
+
+  &_error {
+    --input-border-color: var(--error-color);
+    --input-text-color: var(--error-color);
+    --input-background: var(--light-color);
+
+    color: var(--error-color);
+
+    .field__text-error {
+      display: block;
+    }
+
+    &.field_subscription {
+      --icon-color: var(--grey-color);
+
+      color: var(--light-color);
+    }
+  }
+}

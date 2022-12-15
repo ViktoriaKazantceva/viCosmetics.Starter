@@ -1,0 +1,215 @@
+.nav-list {
+  @include list-reset;
+
+  position: relative;
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-auto-rows: rem(48);
+  gap: rem(4) 0;
+
+  input[type="checkbox"]:checked + label + ul .nav-list__item-2,
+  input[type="checkbox"]:checked + label:nth-of-type(n) + ul .nav-list__item-2 {
+    // use label:nth-of-type(n) to fix a bug on safari (<= 8.0.8) with multiple adjacent-sibling selectors
+    // show children when item is checked
+    transform: translate3d(-100%, 0, 0);
+    transition: transform var(--animation-time-200) ease-out;
+  }
+
+  input[type="checkbox"]:checked + label + .nav-list__second {
+    &::before {
+      transform: translate3d(0, 0, 0);
+      transition: transform var(--animation-time-200) ease-out;
+    }
+  }
+
+  &__item-content {
+    @include flex-all-sb;
+    @include w-h-100;
+
+    padding: rem(0) rem(24) 0 rem(32);
+    box-sizing: border-box;
+
+    @include small-tablet {
+      padding: 0 rem(32) 0 rem(40);
+    }
+
+    @include small-desktop {
+      padding: 0 rem(8) 0 rem(16);
+    }
+  }
+
+  &__link {
+    font-size: inherit;
+    text-transform: inherit;
+    color: inherit;
+    transition: color var(--animation-time-200) linear;
+
+    &::after {
+      @include w-h-100;
+
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: transparent;
+    }
+  }
+
+  &__item {
+    @include font-size-20;
+
+    position: relative;
+    overflow: clip;
+    text-transform: lowercase;
+    color: var(--dark-color);
+    stroke: currentColor;
+    background-color: inherit;
+    transition: color var(--animation-time-200) linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: auto;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      height: 0%;
+      background: var(--dark-color);
+      transition: height var(--animation-time-250) linear;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    &_active {
+      @include active;
+    }
+
+    @include hover {
+      color: var(--light-color);
+
+      &::before {
+        top: 0;
+        bottom: auto;
+        height: 100%;
+      }
+
+      &::after {
+        height: 100%;
+      }
+    }
+  }
+
+  &__item-1 {
+    z-index: 1;
+    grid-column: 1 / 2;
+  }
+
+  &__item-2 {
+    z-index: 2;
+    grid-column: 2 / 3;
+    transform: translate3d(0, 0, 0);
+    transition: transform var(--animation-time-200) ease-in-out;
+
+    &_first {
+      @include active;
+
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      padding: 0;
+
+      span {
+        order: 2;
+        width: 100%;
+        text-align: center;
+      }
+
+      svg {
+        order: 1;
+        transform: scale3d(-1, 1, 1);
+      }
+
+      @include small-desktop {
+        top: var(--header-height);
+      }
+    }
+  }
+
+  &__item-has-children {
+    display: contents;
+    grid-column: 1 / 2;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  &__second {
+    @include list-reset;
+
+    display: contents;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      min-height: calc(rem(48) * 8 + rem(4) * 7);
+      background-color: var(--light-color);
+      transform: translate3d(100%, 0, 0);
+      transition: transform var(--animation-time-200) ease-in-out;
+    }
+  }
+
+  &__checkbox {
+    position: relative;
+    grid-column: 1 / 2;
+    box-sizing: border-box;
+    color: var(--dark-color);
+    cursor: pointer;
+
+    &_center {
+      // padding: 0 rem(48) 0 rem(8);
+      padding: 0 rem(56) 0 rem(24);
+      color: var(--light-color);
+
+      @include small-tablet {
+        padding: 0 rem(64) 0 rem(32);
+      }
+
+      @include small-desktop {
+        padding: 0 rem(48) 0 rem(8);
+      }
+    }
+
+    @extend .nav-list__item;
+  }
+
+  &_up {
+    // Сlass .nav-list_up for ease ::before height animation when the cursor moves up and down .nav-list__item
+    .nav-list__item {
+      &::before {
+        top: 0;
+        bottom: auto;
+      }
+
+      &:hover {
+        &::before {
+          top: auto;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through 55 {
+  .nav-list__item-2:nth-of-type(#{$i}) {
+    grid-row: $i #{"/"} ($i + 1);
+  }
+}

@@ -1,0 +1,72 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-row: 3 / 4;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  overflow-y: clip;
+  padding-bottom: var(--mobile-menu-height);
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 1px;
+    transition: transform var(--animation-time-200) linear;
+  }
+
+  &::before {
+    left: 0;
+    background-color: var(--dark-color);
+    transform: translate3d(-100%, 0, 0);
+
+    @include small-tablet {
+      width: calc(50% + rem(8));
+    }
+
+    @include tablet {
+      width: calc((100% / 12) * 7 + rem(8));
+    }
+  }
+
+  &::after {
+    right: 0;
+    background-color: var(--dark-color);
+    transform: translate3d(100%, 0, 0);
+
+    @include small-tablet {
+      width: calc(50% - rem(8));
+      background-color: var(--pink-light);
+    }
+
+    @include tablet {
+      width: calc((100% / 12) * 5 - rem(8));
+    }
+  }
+
+  @include small-tablet {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, auto);
+    padding-bottom: 0;
+    gap: 0 rem(16);
+
+    &::before,
+    &::after {
+      content: "";
+    }
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  @include small-desktop {
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+}

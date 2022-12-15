@@ -1,0 +1,80 @@
+.main-about-company {
+  padding-top: var(--header-height);
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, min-content) 1fr min-content;
+    padding: rem(16) 0 0 0;
+    box-sizing: border-box;
+    gap: 0 rem(16);
+
+    @include small-tablet {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(2, min-content) 1fr;
+      height: calc(100vh - var(--footer-height));
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(12, 1fr);
+      padding: rem(32) 0 0 0;
+      height: calc(100vh - var(--header-height));
+    }
+
+    @include small-desktop {
+      position: sticky;
+      top: var(--header-height);
+      height: calc(100vh - var(--header-height));
+      gap: 0 rem(32);
+    }
+  }
+
+  &__title-wrapper {
+    @include flex-all-sb;
+
+    flex-wrap: wrap;
+    margin-bottom: rem(16);
+
+    @include mobile {
+      flex-wrap: nowrap;
+    }
+
+    @include tablet {
+      margin-bottom: rem(24);
+    }
+
+    @include big-desktop {
+      margin-bottom: rem(32);
+    }
+  }
+
+  &__btn-wrapper {
+    @include loading-right;
+    @include flex-v-center;
+
+    justify-content: flex-end;
+    width: 100%;
+
+    @include mobile {
+      width: min-content;
+    }
+  }
+
+  &__slider {
+    grid-column: 1 / -1;
+  }
+
+  &__breadcrumbs,
+  &__title-wrapper {
+    grid-column: 1 / -1;
+    padding: 0 rem(16);
+
+    @include small-tablet {
+      padding: 0 rem(24);
+    }
+
+    @include small-desktop {
+      padding: 0 rem(32) 0 0;
+    }
+  }
+}

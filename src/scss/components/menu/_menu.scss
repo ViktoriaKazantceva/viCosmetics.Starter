@@ -1,0 +1,24 @@
+.menu {
+  @include list-reset;
+  @include flex-v-center;
+  @include loading_right;
+
+  &_mobile {
+    @include loading-bottom;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--dark-color);
+    padding: rem(8) rem(16);
+    background-color: var(--light-color);
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+}

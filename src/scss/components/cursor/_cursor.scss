@@ -1,0 +1,85 @@
+.cursor {
+  --cursor-size: 60;
+  --border-color: var(--dark-color);
+
+  position: absolute;
+  z-index: 2;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: rem(var(--cursor-size));
+  height: rem(var(--cursor-size));
+  box-sizing: border-box;
+  background-color: var(--light-color);
+  opacity: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform var(--animation-time-200) ease-in-out;
+  transition-property: transform, opacity;
+
+  &::before {
+    display: block;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+  }
+
+  &_visible {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+    transition: transform var(--animation-time-250) ease-out;
+    transition-property: transform, opacity;
+  }
+
+  &_brands {
+    --cursor-size: 85;
+    --border-color: var(--hover-color);
+
+    background-color: var(--hover-color);
+
+    // for letters in a title 'бренды · бренды · '
+    div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: spin-text 10s linear infinite;
+    }
+
+    span {
+      @include font-size-12;
+
+      position: absolute;
+      left: 50%;
+      top: 1%;
+      transform-origin: 0 rem(40);
+    }
+  }
+
+  &_flower-1 {
+    &::before {
+      content: "";
+      background-image: url("/img/cursor_flower-1.svg");
+      background-position: center 60%;
+      background-size: auto 84%;
+    }
+  }
+
+  &_brand-1 {
+    &::before {
+      content: "";
+      background-image: url("/img/cursor_brand-1.png");
+      background-position: center;
+      background-size: auto 105%;
+    }
+  }
+}
+
+// Cursor
+@keyframes spin-text {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

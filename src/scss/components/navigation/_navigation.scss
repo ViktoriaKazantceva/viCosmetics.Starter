@@ -1,0 +1,12 @@
+.nav {
+  @include loading_left;
+
+  flex-grow: 1;
+  overflow: clip;
+  margin-bottom: rem(48);
+  min-height: calc(rem(48) * 8 + rem(4) * 7);
+
+  @include small-desktop {
+    margin-bottom: rem(64);
+  }
+}

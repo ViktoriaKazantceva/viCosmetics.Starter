@@ -1,0 +1,28 @@
+<div class="subscription subscription_aside">
+  <h3 class="subscription__title title">Подписка на рассылку</h3>
+  <span class="subscription__text">
+    Не пропускайте информацию о косметических новинках, акциях и персональных скидках
+  </span>
+
+  <div class="field field_subscription">
+    <label class="field__label visually-hidden" for="input-subscription">
+      <span>Email</span>
+    </label>
+
+    <div class="field__input-wrapper">
+      <div class="field__input-container">
+      <input class="field__input field__input_subscription" id="input-subscription" type="email" aria-label="Новостная рассылка" autocomplete="off" placeholder="Электронная почта">
+      <span class="field__input-border-bottom"></span>
+      <button class="btn btn-arrow btn-arrow_subscription field__btn" aria-label="Подписаться на новостную рассылку по введенному email адресу" type="submit">
+        @include('../../img/arrow.svg')
+      </button>
+      </div>
+
+      <span class="field__text-error">В поле содержится ошибка. Проверьте язык и регистр символов.</span>
+    </div>
+  </div>
+
+  <span class="subscription__text-small">
+    Подписываясь на рассылку, Я даю согласие на обработку персональных данных согласно ч.4 ст. 9 152-ФЗ.
+  </span>
+</div>

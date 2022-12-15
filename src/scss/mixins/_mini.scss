@@ -1,0 +1,190 @@
+// Font
+$browser-context: 16; // Default
+
+@function rem($pixels, $context: $browser-context) {
+  @return calc(($pixels / $context) * 1rem);
+}
+
+@mixin adaptive-font($f-min, $f-max, $w-min, $w-max) {
+  $add-size: calc(($f-min / $browser-context) * 1rem);
+  $difference-size: $f-max - $f-min;
+
+  font-size: calc(#{$add-size} + #{$difference-size} * (100vw - #{$w-min + px}) / (#{$w-max} - #{$w-min}));
+}
+
+@mixin font-size-12 {
+  font-size: rem(12);
+  line-height: 125%;
+  letter-spacing: 0.4px;
+}
+
+@mixin font-size-14 {
+  font-size: rem(14);
+  line-height: 145%;
+  letter-spacing: 0.25px;
+}
+
+@mixin font-size-16 {
+  font-size: rem(16);
+  line-height: 150%;
+  letter-spacing: 0.5px;
+}
+
+@mixin font-size-20 {
+  font-size: rem(20);
+  line-height: 140%;
+  letter-spacing: 0.25px;
+}
+
+@mixin font-size-24 {
+  font-size: rem(24);
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+@mixin font-size-32 {
+  font-size: rem(32);
+  line-height: 140%;
+  letter-spacing: 0.25px;
+}
+
+@mixin font-size-40 {
+  font-size: rem(40);
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+@mixin footer-title {
+  font-weight: var(--fw-regular);
+  color: inherit;
+}
+
+// Grid
+@mixin footerToBottom {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+@mixin flex-v-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-h-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-all-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-all-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Margin
+@mixin mr($value) {
+  &:not(:last-child) {
+    margin-right: $value;
+  }
+}
+
+@mixin ml($value) {
+  &:not(:last-child) {
+    margin-left: $value;
+  }
+}
+
+@mixin mb($value) {
+  &:not(:last-child) {
+    margin-bottom: $value;
+  }
+}
+
+@mixin mt($value) {
+  &:not(:last-child) {
+    margin-top: $value;
+  }
+}
+
+// Transform
+@mixin loading-left {
+  opacity: 0;
+  transform: translate3d(rem(-10), 0, 0);
+}
+
+@mixin loading-right {
+  opacity: 0;
+  transform: translate3d(rem(10), 0, 0);
+}
+
+@mixin loading-bottom {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+@mixin loading-top {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+}
+
+@mixin loading-text($time) {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--animation-time-250) ease-out $time;
+  transition-property: transform, opacity;
+}
+
+@mixin loading-line($time) {
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--animation-time-200) linear $time;
+}
+
+@mixin color-animation($value) {
+  transition: $value var(--animation-time-200) linear;
+}
+
+// List reset
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Active class
+@mixin active {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
+
+// Hover
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin w-h-100 {
+  width: 100%;
+  height: 100%;
+}
+
+// Image
+/* stylelint-disable */
+@mixin image-set($pathToImage) {
+  background-image: url("#{$pathToImage}.jpg");
+  background-image: image-set(
+    "#{$pathToImage}.avif"type("image/avif"),
+    "#{$pathToImage}.webp"type("image/webp"),
+    "#{$pathToImage}.jpg"type("image/jpg")
+  );
+}

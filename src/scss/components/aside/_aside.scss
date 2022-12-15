@@ -1,0 +1,81 @@
+.aside {
+  position: fixed;
+  left: 0;
+  top: var(--header-height);
+  z-index: 9;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100% - var(--header-height));
+  background-color: #1a1a1a80;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility var(--animation-time-200) ease var(--animation-time-200);
+  transition-property: visibility, opacity;
+
+  &::before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--dark-color);
+    transform: translate3d(0, -100%, 0);
+
+    @include small-desktop {
+      content: "";
+    }
+  }
+
+  &_active {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility var(--animation-time-250) ease;
+    transition-property: visibility, opacity;
+
+    .aside__content {
+      transform: translate3d(0, 0, 0);
+      transition: transform var(--animation-time-250) ease-out var(--animation-time-150);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 var(--mobile-menu-height);
+    width: 100%;
+    min-height: calc(100% - var(--mobile-menu-height));
+    box-sizing: border-box;
+    background-color: var(--light-color);
+    transform: translate3d(-100%, 0, 0);
+    transition: transform var(--animation-time-250) ease-in-out;
+
+    @include small-tablet {
+      padding: 0;
+      width: rem(510);
+      height: 100%;
+    }
+
+    @include small-desktop {
+      padding: rem(32) rem(32) rem(96);
+      width: rem(416);
+      transform: none;
+    }
+
+    @include desktop {
+      width: rem(464);
+    }
+  }
+
+  @include small-desktop {
+    position: relative;
+    top: 0;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    overflow-y: visible;
+    height: 100%;
+    background-color: transparent;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}

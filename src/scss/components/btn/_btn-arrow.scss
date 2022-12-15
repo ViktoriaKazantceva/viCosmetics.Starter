@@ -1,0 +1,37 @@
+.btn-arrow {
+  @include flex-all-center;
+
+  color: inherit;
+  transform: stroke var(--animation-time-200) linear;
+
+  &_subscription {
+    grid-column: 2 / 3;
+    stroke: var(--light-color);
+
+    @include hover {
+      stroke: var(--dark-color);
+    }
+  }
+
+  &_slider-prev {
+    transform: scale3d(-1, 1, 1);
+  }
+
+  &_slider-prev,
+  &_slider-next {
+    stroke: var(--grey-color);
+
+    @include hover {
+      stroke: var(--dark-color);
+    }
+  }
+
+  &_slider-disabled {
+    stroke: var(--grey-light-color);
+
+    @include hover {
+      stroke: var(--grey-light-color);
+      cursor: default;
+    }
+  }
+}

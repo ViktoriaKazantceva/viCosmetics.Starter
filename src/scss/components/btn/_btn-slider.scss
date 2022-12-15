@@ -1,0 +1,9 @@
+.btn-slider {
+  display: none;
+  width: rem(40);
+  height: rem(40);
+
+  @include small-tablet {
+    display: flex;
+  }
+}

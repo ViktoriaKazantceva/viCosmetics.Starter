@@ -1,0 +1,28 @@
+.title {
+  margin: 0;
+  padding: 0;
+
+  &_big-letters {
+    text-transform: uppercase;
+  }
+
+  &_xl {
+    @include loading-left;
+    @include font-size-24;
+
+    font-weight: var(--fw-light);
+    color: var(--dark-color);
+
+    @include tablet {
+      @include font-size-32;
+    }
+
+    @include small-desktop {
+      @include loading-right;
+    }
+
+    @include big-desktop {
+      @include font-size-40;
+    }
+  }
+}

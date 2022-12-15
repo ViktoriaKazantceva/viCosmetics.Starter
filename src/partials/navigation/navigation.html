@@ -1,0 +1,80 @@
+<nav class="nav">
+  <ul class="nav-list">
+    <li class="nav-list__item nav-list__item-1">
+      <div class="nav-list__item-content">
+        <a href="#" class="nav-list__link" aria-label="Открыть меню каталога товаров">каталог</a>
+        @include('../../img/arrow.svg')
+      </div>
+    </li>
+    <li class="nav-list__item nav-list__item-1">
+      <div class="nav-list__item-content">
+        <a href="#" class="nav-list__link" aria-label="Открыть меню брендов">бренды</a>
+        @include('../../img/arrow.svg')
+      </div>
+    </li>
+    <li class="nav-list__item nav-list__item-1">
+      <div class="nav-list__item-content">
+        <a href="#" class="nav-list__link" aria-label="Перейти на страницу с акциями">акции</a>
+      </div>
+    </li>
+    <li class="nav-list__item nav-list__item-1">
+      <div class="nav-list__item-content">
+        <a href="#" class="nav-list__link" aria-label="Перейти на страницу со статьями">статьи</a>
+      </div>
+    </li>
+
+    <li class="nav-list__item nav-list__item-1 nav-list__item-has-children">
+      <input type="checkbox" name="group-1" id="group-1" class="visually-hidden" aria-label="Перейти на страницу и открыть меню о компании" checked>
+      <label for="group-1" class="nav-list__checkbox nav-list__item-content">
+        <span>о компании</span>
+        @include('../../img/arrow.svg')
+      </label>
+      <ul class="nav-list__second">
+        <li class="nav-list__item nav-list__item-2 nav-list__item_active nav-list__item-2_first">
+          <input type="checkbox" name="group-1" id="group-1" class="visually-hidden" aria-label="Вернуться в основное меню">
+          <label for="group-1" class="nav-list__checkbox nav-list__checkbox_center nav-list__item-content">
+            <span>о компании</span>
+            @include('../../img/arrow.svg')
+          </label>
+        </li>
+        <li class="nav-list__item nav-list__item-2">
+          <div class="nav-list__item-content">
+            <a href="#" class="nav-list__link" aria-label="Перейти на страницу для связи с компанией">связаться с нами</a>
+          </div>
+        </li>
+        <li class="nav-list__item nav-list__item-2">
+          <div class="nav-list__item-content">
+            <a href="#" class="nav-list__link" aria-label="Перейти на страницу с представительствами">представительства</a>
+          </div>
+        </li>
+        <li class="nav-list__item nav-list__item-2">
+          <div class="nav-list__item-content">
+            <a href="#" class="nav-list__link" aria-label="Перейти на страницу с сертификатами">сертификаты</a>
+          </div>
+        </li>
+        <li class="nav-list__item nav-list__item-2">
+          <div class="nav-list__item-content">
+            <a href="#" class="nav-list__link" aria-label="Перейти на страницу с условиями политики конфиденциальности">политика конфиденциальности</a>
+          </div>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-list__item nav-list__item-1">
+      <div class="nav-list__item-content">
+        <a href="#" class="nav-list__link" aria-label="Перейти на страницу с условиями доставки и оплаты товара">доставка и оплата</a>
+      </div>
+    </li>
+    <li class="nav-list__item nav-list__item-1">
+      <div class="nav-list__item-content">
+        <a href="#" class="nav-list__link" aria-label="Перейти на страницу и открыть меню личного кабинета">личный кабинет</a>
+        @include('../../img/arrow.svg')
+      </div>
+    </li>
+    <li class="nav-list__item nav-list__item-1">
+      <div class="nav-list__item-content">
+        <a href="#" class="nav-list__link" aria-label="Перейти на страницу с картой сайта">карта сайта</a>
+      </div>
+    </li>
+  </ul>
+</nav>

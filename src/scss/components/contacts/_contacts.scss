@@ -1,0 +1,78 @@
+.contacts {
+  position: relative;
+  display: grid;
+  grid-row: 2 / 3;
+  grid-template-columns: repeat(auto-fill, minmax(rem(180), 1fr));
+  grid-template-rows: auto;
+  padding: rem(32);
+  color: var(--dark-color);
+  gap: rem(24) rem(16);
+
+  &__list {
+    @include list-reset;
+  }
+
+  &__list-item {
+    @include mb(rem(4));
+  }
+
+  &__title {
+    @include footer-title;
+    @include font-size-16;
+
+    margin-bottom: rem(8);
+
+    @include tablet {
+      @include font-size-20;
+    }
+  }
+
+  &__link {
+    @include hover {
+      svg {
+        fill: var(--hover-color);
+      }
+    }
+  }
+
+  &__link,
+  &__text {
+    @include font-size-14;
+
+    display: inline-flex;
+    align-items: center;
+    padding: rem(8) 0;
+    color: var(--dakr-color);
+
+    svg {
+      flex-shrink: 0;
+      margin-right: rem(8);
+      fill: var(--light-color);
+      stroke: var(--grey-color);
+      visibility: visible;
+      transition: fill var(--animation-time-250) linear;
+    }
+
+    @include tablet {
+      @include font-size-16;
+    }
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include small-tablet {
+    padding: rem(32) rem(40);
+  }
+
+  @include tablet {
+    padding: rem(48) rem(40);
+  }
+
+  @include small-desktop {
+    grid-template-columns: auto;
+    margin-bottom: rem(64);
+    padding: rem(48) rem(16) 0;
+  }
+}

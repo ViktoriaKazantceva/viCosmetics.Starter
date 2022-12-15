@@ -1,0 +1,17 @@
+.btn-house {
+  svg {
+    stroke: var(--dark-color);
+  }
+
+  &.btn-link_active {
+    svg {
+      stroke: var(--light-color);
+    }
+  }
+
+  @include hover {
+    svg {
+      stroke: var(--dark-color);
+    }
+  }
+}

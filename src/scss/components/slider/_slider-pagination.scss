@@ -1,0 +1,45 @@
+.slider-pagination {
+  @include list-reset;
+  @include flex-v-center;
+
+  position: relative;
+  width: min-content !important;
+
+  &__bullet {
+    @include flex-all-center;
+    @include color-animation(color);
+
+    position: relative;
+    width: rem(40);
+    height: rem(40);
+    color: var(--grey-light-color);
+    background-color: var(--light-color);
+
+    &::before {
+      content: "";
+      border-radius: 50%;
+      width: rem(10);
+      height: rem(10);
+      background-color: currentColor;
+    }
+
+    &_active {
+      color: var(--pink-light);
+
+      @include hover {
+        color: var(--pink-light) !important;
+      }
+    }
+
+    @include hover {
+      color: var(--hover-color);
+      cursor: pointer;
+    }
+  }
+
+  &_horizontal {
+    left: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+  }
+}

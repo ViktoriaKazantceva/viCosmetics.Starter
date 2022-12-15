@@ -1,0 +1,7 @@
+.btn-search {
+  &.btn-link_active {
+    svg {
+      stroke: var(--light-color);
+    }
+  }
+}

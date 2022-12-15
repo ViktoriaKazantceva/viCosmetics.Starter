@@ -1,0 +1,63 @@
+.copyright {
+  @include flex-all-sb;
+
+  padding: rem(8) rem(16);
+  background-color: var(--dark-color);
+
+  &__text {
+    @include font-size-14;
+
+    font-weight: var(--fw-regular);
+    color: var(--light-color);
+
+    &:nth-of-type(1) {
+      @include loading-left;
+    }
+
+    &:nth-of-type(2) {
+      @include loading-right;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding: 0 rem(4);
+    color: inherit;
+    transition: color var(--animation-time-200) linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: auto;
+      bottom: 0;
+      width: 100%;
+      height: 0%;
+      background: var(--light-color);
+      transition: height var(--animation-time-250) linear;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    @include hover {
+      color: var(--dark-color);
+
+      &::before {
+        top: 0;
+        bottom: auto;
+        height: 100%;
+      }
+    }
+  }
+
+  @include small-tablet {
+    padding: rem(8) rem(24);
+  }
+
+  @include small-desktop {
+    padding: rem(8) rem(32);
+  }
+}

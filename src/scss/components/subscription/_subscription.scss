@@ -1,0 +1,44 @@
+.subscription {
+  grid-row: 3 / 4;
+  padding: rem(32);
+  color: var(--light-color);
+  background-color: var(--pink-light);
+
+  &__title {
+    @include footer-title;
+
+    margin-bottom: rem(16);
+    font-size: rem(16);
+
+    @include tablet {
+      @include font-size-20;
+    }
+  }
+
+  &__text {
+    @include font-size-14;
+
+    display: inline-block;
+    margin-bottom: rem(16);
+
+    @include tablet {
+      @include font-size-16;
+    }
+  }
+
+  &__text-small {
+    @include font-size-12;
+  }
+
+  @include small-tablet {
+    padding: rem(32) rem(40);
+  }
+
+  @include tablet {
+    padding: rem(48) rem(40);
+  }
+
+  @include small-desktop {
+    padding: rem(48) rem(32);
+  }
+}

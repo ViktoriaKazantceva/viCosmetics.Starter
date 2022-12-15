@@ -1,0 +1,9 @@
+.slider_loading-first {
+  .slider__text {
+    @include loading-left;
+
+    @include small-desktop {
+      @include loading-right;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.logo {
+  @include flex-v-center;
+  @include loading_left;
+
+  color: var(--dark-color);
+
+  &__image {
+    margin-right: rem(8);
+  }
+
+  &__text {
+    @include font-size-16;
+
+    font-weight: var(--fw-regular);
+  }
+}

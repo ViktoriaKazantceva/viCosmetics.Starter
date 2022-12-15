@@ -1,0 +1,89 @@
+<main class="main main-about-company">
+  @include('../cursor/cursor.html')
+  @include('../aside/aside.html')
+
+  <section class="content main-about-company__content">
+
+    <ul class="breadcrumbs main-about-company__breadcrumbs">
+      <li class="breadcrumbs__item">
+        <a href="/" class="breadcrumbs__link" aria-label="Перейти на главную страницу сайта">Главная</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link" aria-label="Перейти на страницу о компании">О компании</a>
+      </li>
+    </ul>
+
+    <div class="main-about-company__title-wrapper">
+      <h1 class="title title_big-letters title_xl main-about-company__title">О компании</h1>
+      <div class="main-about-company__btn-wrapper">
+        <button class="btn btn-slider btn-arrow btn-arrow_slider-prev" type="button" aria-label="Предыдущий слайд">
+          @include('../../img/arrow.svg')
+        </button>
+        <ul class="slider-pagination slider-pagination_horizontal"></ul>
+        <button class="btn btn-slider btn-arrow btn-arrow_slider-next" type="button" aria-label="Следующий слайд">
+          @include('../../img/arrow.svg')
+        </button>
+      </div>
+    </div>
+
+    <div class="swiper swiper-no-swiping slider main-about-company__slider">
+      <!-- Additional required wrapper -->
+      <ul class="swiper-wrapper slider__wrapper">
+
+        <!-- Slides -->
+        <li class="swiper-slide slider__item slider__item-1 slider_loading-first slider__video_loading">
+          <p  class="slider__text">Компания viCosmetics стоит на&nbsp;страже вашей молодости и&nbsp;красоты уже более</p>
+          <div class="circle slider__circle-1">
+            <div class="circle__item"></div>
+            <span class="circle__title title_xl">11 лет</span>
+          </div>
+          <div class="slider__video-wrapper">
+            <video loop muted playsinline class="slider__video slider__video-1" aria-label="https://www.pexels.com/ru-ru/@cottonbro/">
+              <source src="video/video_1.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </li>
+
+        <li class="swiper-slide slider__item slider__item-2">
+          <p class="slider__text">Миссия нашей компании создавать такую косметику, чтобы используя&nbsp;её, каждая женщина могла сказать:</p>
+          <p class="slider__text">&laquo;Я&nbsp;чувствую себя юной, полной сил и&nbsp;здоровья, а&nbsp;выгляжу обворожительно красивой. <br/>И&nbsp;я&nbsp;хочу оставаться такой всегда!&raquo;</p>
+        </li>
+
+        <li class="swiper-slide slider__item slider__item-3">
+          <p class="slider__text">Каждый продукт viCosmetics&nbsp;&mdash; это оригинальная идея, синтез народных рецептур и&nbsp;актуальных разработок биохимиков.</p>
+          <p class="slider__text">Используя прогрессивные разработки учёных наукограда Кольцово и&nbsp;новосибирского Академгородка, мы&nbsp;создали в&nbsp;России продукцию, сопоставимую и&nbsp;превосходящую по&nbsp;качеству иностранные аналоги.</p>
+        </li>
+
+        <li class="swiper-slide slider__item slider__item-4">
+          <p class="slider__text">
+            На&nbsp;данный момент в&nbsp;viCosmetics представлены
+            <a href="#" class="slider__link" data-hover="cursor_brands" data-cursor-text="бренды · бренды · " aria-label="Перейти на страницу о брендах">
+              девять узконаправленных косметических линий.
+            </a>
+          </p>
+          <p class="slider__text">
+            Это девять подходов, способов и&nbsp;идеологий заботы о&nbsp;сохранении вашей молодости и&nbsp;красоты.
+          </p>
+          <div class="circle slider__circle-2">
+            <div class="circle__item"></div>
+            <span class="circle__title title_xl">9 брендов</span>
+          </div>
+        </li>
+
+        <li class="swiper-slide slider__item slider__item-5">
+          <p class="slider__text">Товары от&nbsp;viCosmetics подходят для магазинов натуральной косметики, салонов красоты, организаторов совместных покупок.</p>
+          <p class="slider__text">Мы&nbsp;продаём косметику в&nbsp;розницу, крупным и&nbsp;мелким оптом.</p>
+          <p class="slider__text">В&nbsp;Новосибирске&nbsp;&mdash; оптом по&nbsp;отпускным ценам.</p>
+          <p class="slider__text">Работаем по&nbsp;всей России, Казахстану, Беларуси.</p>
+          <div class="slider__video-wrapper">
+            <video loop muted playsinline class="slider__video slider__video-2" aria-label="https://www.pexels.com/ru-ru/@cottonbro/">
+              <source src="video/video_2.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </li>
+        <!-- Slides -->
+
+      </ul>
+    </div>
+  </section>
+</main>

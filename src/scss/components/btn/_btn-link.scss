@@ -1,0 +1,36 @@
+.btn-link {
+  @include flex-all-center;
+
+  position: relative;
+  width: rem(40);
+  height: rem(40);
+
+  svg {
+    fill: var(--light-color);
+    transition: fill var(--animation-time-250) linear;
+  }
+
+  &__marker {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1) translate(5%, 10%);
+    transform-origin: center;
+    transition: transform var(--animation-time-250) ease-in-out;
+    transition-property: transform, opacity;
+  }
+
+  &_active {
+    svg {
+      fill: var(--dark-color);
+    }
+  }
+
+  @include hover {
+    svg {
+      fill: var(--hover-color);
+    }
+  }
+}
