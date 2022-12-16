@@ -1,15 +1,15 @@
 # Редизайн сайта компании viCosmetics
 
 Данный проект разработан на основе материалов сайта Новосибирской компании viCosmetics, специализирующейся на производстве натуральной косметики:
-https://vi-c.ru/
+https://vi-c.ru/.
 
 Проект предназначен для некоммерческого использования. Изображения товаров и тексты принадлежат правообладателю.
 
-Свёрстана страница сайта __«О компании»__ https://viktoriakazantceva.github.io/viCosmetics.shop/
+Свёрстана страница сайта __«О компании»__: https://viktoriakazantceva.github.io/viCosmetics.shop/.
 
-На данной странице присутствуют видео от __cottonbro studio__: https://www.pexels.com/ru-RU/@cottonbro
+На данной странице присутствуют видео от __cottonbro studio__: https://www.pexels.com/ru-RU/@cottonbro.
 
-Для проекта используется Gulp-сборка от __MaxGraph__: https://github.com/maxdenaro/gulp-maxgraph, 
+Для проекта используется Gulp-сборка от __MaxGraph__: https://github.com/maxdenaro/gulp-maxgraph.
 
 ## Начало работы
 
