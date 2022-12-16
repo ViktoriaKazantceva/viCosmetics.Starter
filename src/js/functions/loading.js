@@ -20,7 +20,7 @@
         }
         setTimeout(() => {
           sideFirsr.classList.remove(`slider_loading-first`);
-        }, 1050);
+        }, 1250);
         setTimeout(() => {
           sideFirsr.classList.remove(`slider__video_loading`);
         }, 600);

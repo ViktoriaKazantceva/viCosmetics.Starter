@@ -134,7 +134,7 @@
 
     .slider__video-wrapper {
       // background for video
-      @include image-set("/img/about-company-slide-1");
+      @include image-set("../img/about-company-slide-1");
 
       background-position: 54% bottom;
       opacity: 0;
@@ -164,10 +164,10 @@
 
   &__item-2 {
     &::before {
-      @include image-set("/img/about-company-slide-2-a");
+      @include image-set("../img/about-company-slide-2-a");
 
       @include tablet {
-        @include image-set("/img/about-company-slide-2");
+        @include image-set("../img/about-company-slide-2");
       }
     }
 
@@ -194,24 +194,24 @@
 
   &__item-3 {
     &::before {
-      @include image-set("/img/about-company-slide-3-b");
+      @include image-set("../img/about-company-slide-3-b");
 
       @include tablet {
-        @include image-set("/img/about-company-slide-3-a");
+        @include image-set("../img/about-company-slide-3-a");
       }
 
       @include small-desktop {
-        @include image-set("/img/about-company-slide-3");
+        @include image-set("../img/about-company-slide-3");
       }
     }
   }
 
   &__item-4 {
     &::before {
-      @include image-set("/img/about-company-slide-4-a");
+      @include image-set("../img/about-company-slide-4-a");
 
       @include tablet {
-        @include image-set("/img/about-company-slide-4");
+        @include image-set("../img/about-company-slide-4");
       }
     }
 
@@ -273,7 +273,7 @@
 
     .slider__video-wrapper {
       // background for video
-      @include image-set("/img/about-company-slide-5");
+      @include image-set("../img/about-company-slide-5");
 
       background-position: 34% bottom;
     }

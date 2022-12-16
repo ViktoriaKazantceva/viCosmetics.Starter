@@ -5,9 +5,11 @@ https://vi-c.ru/
 
 Проект предназначен для некоммерческого использования. Изображения товаров и тексты принадлежат правообладателю.
 
-Сверстана страница: «О компании», на которой присутствует видео от __cottonbro studio__: https://www.pexels.com/ru-RU/@cottonbro
+Свёрстана страница сайта __«О компании»__ https://viktoriakazantceva.github.io/viCosmetics.shop/
 
-Для проекта используется Gulp-сборка от __MaxGraph__: https://github.com/maxdenaro/gulp-maxgraph
+На данной странице присутствуют видео от __cottonbro studio__: https://www.pexels.com/ru-RU/@cottonbro
+
+Для проекта используется Gulp-сборка от __MaxGraph__: https://github.com/maxdenaro/gulp-maxgraph, 
 
 ## Начало работы
 
